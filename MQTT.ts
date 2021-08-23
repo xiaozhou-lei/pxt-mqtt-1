@@ -374,6 +374,7 @@ namespace MQTT {
             return
         } else if (item.indexOf("+MQTTSUBRECV:", 0) != -1) {
             let offset = item.indexOf(",");
+	    basic.showString(item);
             MQTT_TOPIC = item.substr(13, (offset - 13));
             MQTT_MESSGE = item.substr(offset + 1, (size - offset - 1));
             EMMQTT_ANSWER_CMD = "SubOk"
